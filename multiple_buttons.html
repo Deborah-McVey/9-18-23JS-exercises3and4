@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Buttons DOM Exercise</title>
+</head>
+<body>
+    <button class="btn_onclick" onclick="changeBackground()">Button 1</button>
+    <button class="btn_onclick" onclick="changeBackground()">Button 2</button>
+    <button class="btn_onclick" onclick="changeBackground()">Button 3</button>
+    <script>
+        const javascriptMultipleButtons = document.querySelectorAll('.btn_onclick');
+
+        javascriptMultipleButtons.forEach((button) => {
+            button.onclick = function changeBgToRandom() {
+	        const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+
+            document.body.style.backgroundColor = `#${randomColor}`;
+            };
+        });
+    
+        javascriptMultipleButtons.addEventListener('onclick', changeBgToRandom); 
+
+        </script>
+        <button class="btn_message" onclick="givesAMessage()">Click Me</button>
+        <script>
+            const javascriptSingleButton = document.querySelector('.btn_message');
+
+            javascriptSingleButton.addEventListener('onclick',givesAMessage); 
+
+            function givesAMessage() {
+            alert("Button was clicked!");
+            };
+
+            givesAMessage();            
+        
+        </script>
+</body>
+</html>
+
+<!-- Exercise #3
+Objective: Deepen understanding of DOM selection methods and dynamic interaction by handling multiple elements.
+
+Instructions:
+
+Create a new HTML file named multiple_buttons.html. In this file, include at least three buttons with the class btn_onclick. Each button can have unique text like "Button 1", "Button 2", and so on.
+
+In the same HTML file, create a <script> section.
+
+Inside the script element, use the querySelectorAll method to select all buttons with the class btn_onclick.
+
+Use the forEach method to loop over each button in the node list.
+
+For each button, add an onclick event that will change the document's background color when the button is clicked.
+
+Instead of setting a static color like #a7f3d0, make the color dynamic.
+
+For an added challenge, assign a different color to each button so that when clicked, they change the background color to a unique hue.
+
+Test your code by opening multiple_buttons.html in a browser. Each button should change the background to a distinct color.
+
+Starter Code
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Buttons DOM Exercise</title>
+</head>
+<body>
+</body>
+</html>  
+
+Exercise #4
+Objective: Manipulate DOM Elements.
+
+Instructions:
+
+Create a new button element with the text "Click Me".
+Append this button to the end of the body.
+Add an event listener to the button so that when it's clicked, it alerts the user with the message "Button was clicked!". Starting Code:
+<body>
+	Existing content
+</body>  -->
